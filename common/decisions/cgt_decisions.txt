@@ -15,6 +15,7 @@ convert_whole_realm_government_type_from_tribal_decision = {
 	# This decision is shown if we are an independent tribal ruler or are a tribal ruler with a liege that has fuedal/clan government
 	is_shown = {
 		has_government = tribal_government
+		NOT = { has_character_flag = cgt_has_changed_government }
 		OR = {
 			is_independent_ruler = yes
 			AND = {
