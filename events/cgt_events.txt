@@ -1,13 +1,13 @@
-﻿namespace = major_decisions
+﻿namespace = cgt_events
 
 # Decisions:
 # decision_change_government_type, by Hamzah
 
 # This is the popup screen that we see 
-decision_change_government_type.0001 = {
+cgt_events.0001 = {
 	type = character_event
-	title = major_decisions.0001.t
-	desc = major_decisions.0001.desc
+	title = cgt_events.0001.t
+	desc = cgt_events.0001.desc
 	theme = stewardship
 	left_portrait = {
 		character = root
@@ -15,7 +15,7 @@ decision_change_government_type.0001 = {
 	}
 
 	option = {
-		name = decision_change_government_type.0001.a
+		name = cgt_events.0001.a
 		convert_whole_realm_to_feudal_effect = yes
 		show_as_tooltip = {
 			convert_whole_realm_to_feudal_effect = yes
@@ -23,7 +23,7 @@ decision_change_government_type.0001 = {
 	}
 
 	option = {
-		name = decision_change_government_type.0001.b
+		name = cgt_events.0001.b
 		convert_whole_realm_to_clan_effect = yes
 		show_as_tooltip = {
 			convert_whole_realm_to_clan_effect = yes
@@ -31,11 +31,8 @@ decision_change_government_type.0001 = {
 	}
 
 	option = {
-		name = decision_change_government_type.0001.c
-	}
-
-	option = {
-		name = decision_change_government_type.0001.d
+		name = cgt_events.0001.c
+		add_prestige_no_experience = 200
 	}
 
 	# option = {
@@ -77,3 +74,4 @@ decision_change_government_type.0001 = {
 # 		}
 # 	}
 # }
+

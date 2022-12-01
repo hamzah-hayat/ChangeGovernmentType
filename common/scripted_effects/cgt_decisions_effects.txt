@@ -3,6 +3,7 @@
 	change_government = feudal_government
 	custom_tooltip = feudal_liege_vassals_will_convert
 
+	convert_vassals_to_feudal = yes
 	convert_whole_realm_effects = yes
 }
 
@@ -11,7 +12,71 @@ convert_whole_realm_to_clan_effect = {
 	change_government = clan_government
 	custom_tooltip = clan_liege_vassals_will_convert
 
+	convert_vassals_to_clan = yes
 	convert_whole_realm_effects = yes
+}
+
+# Convert vassals seperately to guarantee it
+# Clan
+convert_vassals_to_clan = {
+	# This force converts the vassals, including feudal/clan governments that also get converted
+	every_vassal_or_below = {
+		change_government = clan_government
+		#Nuke tribal authorities.
+		if = {
+			limit = { has_realm_law = tribal_authority_0 }
+			remove_realm_law = tribal_authority_0
+		}
+		if = {
+			limit = { has_realm_law = tribal_authority_1 }
+			remove_realm_law = tribal_authority_1
+		}
+		if = {
+			limit = { has_realm_law = tribal_authority_2 }
+			remove_realm_law = tribal_authority_2
+		}
+		if = {
+			limit = { has_realm_law = tribal_authority_3 }
+			remove_realm_law = tribal_authority_3
+		}
+		if = {
+			limit = {
+				NOT = { has_realm_law = crown_authority_0 }
+			}
+			add_realm_law_skip_effects = crown_authority_0
+		}
+	}
+}
+
+# Feudal
+convert_vassals_to_feudal = {
+	# This force converts the vassals, including feudal/clan governments that also get converted
+	every_vassal_or_below = {
+		change_government = feudal_government
+		#Nuke tribal authorities.
+		if = {
+			limit = { has_realm_law = tribal_authority_0 }
+			remove_realm_law = tribal_authority_0
+		}
+		if = {
+			limit = { has_realm_law = tribal_authority_1 }
+			remove_realm_law = tribal_authority_1
+		}
+		if = {
+			limit = { has_realm_law = tribal_authority_2 }
+			remove_realm_law = tribal_authority_2
+		}
+		if = {
+			limit = { has_realm_law = tribal_authority_3 }
+			remove_realm_law = tribal_authority_3
+		}
+		if = {
+			limit = {
+				NOT = { has_realm_law = crown_authority_0 }
+			}
+			add_realm_law_skip_effects = crown_authority_0
+		}
+	}
 }
 
 # This is what converts the vassal government types, authority and holdings
@@ -41,43 +106,6 @@ convert_whole_realm_effects = {
 			}
 			add_realm_law_skip_effects = crown_authority_0
 		}
-
-		# Also convert every vassal.
-		# If Player has taken feudal, become clan. Otherwise, become clan
-		# This force converts the vassals, including feudal/clan governments that also get converted
-			every_vassal_or_below = {
-				limit = { has_government = tribal_government }
-
-				if = {
-					liege = { has_government = clan_government }
-					change_government = clan_government
-				}
-				else = { change_government = feudal_government }
-
-				#Nuke tribal authorities.
-				if = {
-					limit = { has_realm_law = tribal_authority_0 }
-					remove_realm_law = tribal_authority_0
-				}
-				if = {
-					limit = { has_realm_law = tribal_authority_1 }
-					remove_realm_law = tribal_authority_1
-				}
-				if = {
-					limit = { has_realm_law = tribal_authority_2 }
-					remove_realm_law = tribal_authority_2
-				}
-				if = {
-					limit = { has_realm_law = tribal_authority_3 }
-					remove_realm_law = tribal_authority_3
-				}
-				if = {
-					limit = {
-						NOT = { has_realm_law = crown_authority_0 }
-					}
-					add_realm_law_skip_effects = crown_authority_0
-				}
-			}
 		
 		## Spawn holdings in tribal counties
 		every_sub_realm_county = { # Spawn temples in your holy sites

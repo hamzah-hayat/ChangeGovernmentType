@@ -1,28 +1,35 @@
 ﻿##################################################
-# GOVERNMENT DECISIONS
-##################################################
-# Choose your Government Type from Tribal (Tribal -> Feudal or Clan)
-# by Hamzah
+# Convert Realm to Feudalism/Clan
+# by Linnéa Thimrén
+# Edited by Hamzah to ensure that player doesn't get decision in list
 ##################################################
 
-convert_whole_realm_government_type_from_tribal_decision = {
+# A decision to feudalize the entire realm (wow!)
+convert_whole_realm_to_feudalism_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
 	major = yes
-	desc = convert_whole_realm_government_type_from_tribal_decision_desc
+	desc = convert_whole_realm_to_feudalism_decision_desc
 
-	ai_check_interval = 0
+	ai_check_interval = 36
 
-	# This decision is shown if we are an independent tribal ruler or are a tribal ruler with a liege that has fuedal/clan government
 	is_shown = {
 		has_government = tribal_government
+		OR = {
+			is_independent_ruler = yes
+			AND = {
+				is_independent_ruler = no
+				liege = {
+					NOR = {
+						has_government = feudal_government
+						has_government = clan_government
+					}
+				}
+			}
+		}
+		NOR {
+			is_local_player = yes
+		}
 	}
-
-	# Same needs as Vanilla
-	# 1. Absolute Tribal Authority
-	# 2. Reformed faith
-	# 3. Prestige level two or above
-	# 4. Capital development is 10 or 5 if any neighbour has feudal/clan government
-	# 5. We need 70% of tribal innovations
 
 	is_valid = {
 		has_realm_law = tribal_authority_3
@@ -61,13 +68,29 @@ convert_whole_realm_government_type_from_tribal_decision = {
 		}
 	}
 
-	# Same cost as Vanilla, 200 prestige
 	cost = {
 		prestige = 200
 	}
 
 	effect = {
-		trigger_event = cgt_events.0001
+		trigger_event = major_decisions.0001
 		save_scope_as = actor
+		convert_whole_realm_to_feudalism_effect = yes
+		hidden_effect = {
+			every_vassal = {
+				trigger_event = {
+					id = major_decisions.0002
+					days = 3
+				}
+			}
+		}
+	}
+
+	ai_potential = {
+		NOT = { has_title = title:e_mongol_empire } #Stop the Mongols from slowing their conquest.
+	}
+
+	ai_will_do = {
+		base = 100
 	}
 }
