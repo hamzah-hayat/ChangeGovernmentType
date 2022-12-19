@@ -1,19 +1,27 @@
 ﻿convert_whole_realm_to_feudal_effect = {
 	# Directly convert to feudal!
 	change_government = feudal_government
-	custom_tooltip = feudal_liege_vassals_will_convert
+	custom_tooltip = all_holding_will_change
+	custom_tooltip = cgt_vassals_will_convert_to_feudal
 
-	convert_vassals_to_feudal = yes
-	convert_whole_realm_effects = yes
+
+	hidden_effect = {
+		convert_vassals_to_feudal = yes
+		convert_whole_realm_effects = yes
+	}
 }
 
 convert_whole_realm_to_clan_effect = {
 	# Directly convert to clan!
 	change_government = clan_government
-	custom_tooltip = clan_liege_vassals_will_convert
+	custom_tooltip = all_holding_will_change
+	custom_tooltip = cgt_vassals_will_convert_to_clan
 
-	convert_vassals_to_clan = yes
-	convert_whole_realm_effects = yes
+
+	hidden_effect = {
+		convert_vassals_to_clan = yes
+		convert_whole_realm_effects = yes
+	}
 }
 
 # Convert vassals seperately to guarantee it
@@ -311,6 +319,4 @@ convert_whole_realm_effects = {
 			remove_from_list = feudal_conversion
 		}
 	}
-
-
 }
