@@ -11,3 +11,5 @@
 - The AI will continue to use the Vanilla decision to change their government types, it is simply hidden from the player, This mod changes the event "convert_whole_realm_to_feudalism_decision" in "common/decisions/90_major_decisions" so will conflict if another mod changes that file as well
 
 - English localisation only right now
+
+- The Mod is currently hosted on the Steam Workshop, at [ChangeGovernmentType](https://steamcommunity.com/sharedfiles/filedetails/?id=2903726036)
