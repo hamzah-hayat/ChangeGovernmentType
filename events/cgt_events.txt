@@ -17,17 +17,17 @@ cgt_events.0001 = {
 	option = {
 		name = cgt_events.0001.a
 		convert_whole_realm_to_feudal_effect = yes
-		show_as_tooltip = {
-			convert_whole_realm_to_feudal_effect = yes
-		}
+		# show_as_tooltip = {
+		# 	convert_whole_realm_to_feudal_effect = yes
+		# }
 	}
 
 	option = {
 		name = cgt_events.0001.b
 		convert_whole_realm_to_clan_effect = yes
-		show_as_tooltip = {
-			convert_whole_realm_to_clan_effect = yes
-		}
+		# show_as_tooltip = {
+		# 	convert_whole_realm_to_clan_effect = yes
+		# }
 	}
 
 	option = {
