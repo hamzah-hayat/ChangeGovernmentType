@@ -9,3 +9,6 @@
  cgt_events.0001.a:0 "The Realm will adopt [feudalism|E] [government|E]!"
  cgt_events.0001.b:0 "The Realm will adopt [clan|E] [government|E]!"
  cgt_events.0001.c:0 "On second thoughts, now is not the time to make this decision..."
+
+ cgt_vassals_will_convert_to_feudal:0 "My [tribal|E] vassals will change to [feudalism|E]"
+ cgt_vassals_will_convert_to_clan:0 "My [tribal|E] vassals will change to [clan|E] government"
