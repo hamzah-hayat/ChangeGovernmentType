@@ -14,9 +14,9 @@ convert_whole_realm_to_feudalism_decision = {
 
 	is_shown = {
 		government_has_flag = government_is_tribal
+		is_ai = yes
 		OR = {
 			is_independent_ruler = yes
-			is_ai = yes
 			AND = {
 				is_independent_ruler = no
 				liege = {
@@ -86,6 +86,67 @@ convert_whole_realm_to_feudalism_decision = {
 
 	ai_potential = {
 		NOT = { has_title = title:e_mongol_empire } #Stop the Mongols from slowing their conquest.
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+##################################################
+# Convert Realm to Tribalism
+# by Maxence Voleau
+# Edited by Hamzah to ensure that player doesn't get decision in list
+##################################################
+
+# A decision to deformalise the entire realm back into tribes.
+convert_to_tribalism_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	major = yes
+	desc = convert_to_tribalism_decision_desc
+
+	ai_check_interval = 36
+
+	is_shown = {
+		is_landed = yes
+		primary_title.tier >= tier_county
+		is_ai = yes
+		NOT = {
+			any_held_title = {
+				tier = tier_county
+				title_province = {
+					NOT = { has_holding_type = tribal_holding }
+				}
+			}
+		}
+		OR = {
+			government_has_flag = government_is_feudal
+			government_has_flag = government_is_clan
+		}
+	}
+
+	is_valid = {
+		
+	}
+
+
+	effect = {
+		trigger_event = major_decisions.0200
+		change_government = tribal_government
+		add_prestige = {
+			add = -150
+		}
+
+		hidden_effect = {
+			add_character_flag = {
+				flag = just_converted_to_tribalism
+				years = 5
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
 	}
 
 	ai_will_do = {

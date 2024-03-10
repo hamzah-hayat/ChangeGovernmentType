@@ -14,7 +14,8 @@ convert_whole_realm_government_type_from_tribal_decision = {
 
 	# This decision is shown if we are an independent tribal ruler or are a tribal ruler with a liege that has fuedal/clan government
 	is_shown = {
-		has_government = tribal_government
+		is_ai = no
+		government_has_flag = government_is_tribal
 	}
 
 	# Same needs as Vanilla
@@ -69,5 +70,53 @@ convert_whole_realm_government_type_from_tribal_decision = {
 	effect = {
 		trigger_event = cgt_events.0001
 		save_scope_as = actor
+	}
+}
+
+##################################################
+# Revert to Tribalism
+# A copy of the original decision, just for players and with less restrictions
+# by Hamzah
+##################################################
+
+# A decision to deformalise the entire realm back into tribes.
+convert_to_tribalism_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	major = yes
+	desc = convert_to_tribalism_decision_desc
+
+	ai_check_interval = 36
+
+	is_shown = {
+		is_landed = yes
+		primary_title.tier >= tier_county
+		is_ai = no
+		OR = {
+			government_has_flag = government_is_feudal
+			government_has_flag = government_is_clan
+		}
+	}
+
+	effect = {
+		trigger_event = major_decisions.0200
+		change_government = tribal_government
+		add_prestige = {
+			add = -150
+		}
+
+		hidden_effect = {
+			add_character_flag = {
+				flag = just_converted_to_tribalism
+				years = 5
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
 	}
 }
