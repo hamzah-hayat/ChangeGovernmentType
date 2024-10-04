@@ -10,7 +10,7 @@ cgt_convert_whole_realm_government_type_from_tribal_decision = {
 		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
 	}
 	decision_group_type = major
-	desc = convert_whole_realm_government_type_from_tribal_decision_desc
+	desc = cgt_convert_whole_realm_government_type_from_tribal_decision_desc
 
 	ai_check_interval = 0
 
@@ -91,6 +91,9 @@ cgt_convert_clan_to_feudalism_decision = {
 	ai_check_interval = 0
 
 	is_shown = {
+		is_landed = yes
+		primary_title.tier >= tier_county
+		is_ai = no
 		government_has_flag = government_is_clan
 	}
 
@@ -136,6 +139,9 @@ cgt_convert_feudalism_to_clan_decision = {
 	ai_check_interval = 0
 
 	is_shown = {
+		is_landed = yes
+		primary_title.tier >= tier_county
+		is_ai = no
 		government_has_flag = government_is_feudal
 	}
 
@@ -196,17 +202,27 @@ cgt_convert_to_tribalism_decision = {
 		}
 	}
 
+	cost = {
+		prestige = 150
+	}
+
 	effect = {
 		trigger_event = major_decisions.0200
 		change_government = tribal_government
-		add_prestige = {
-			add = -150
-		}
 
 		hidden_effect = {
-			add_character_flag = {
-				flag = just_converted_to_tribalism
-				years = 5
+			every_vassal_or_below = {
+				limit = {
+					OR = {
+						government_has_flag = government_is_feudal
+						government_has_flag = government_is_clan
+					}
+				}
+				change_government = tribal_government
+				trigger_event = {
+					id = major_decisions.0002
+					days = 3
+				}
 			}
 		}
 	}
