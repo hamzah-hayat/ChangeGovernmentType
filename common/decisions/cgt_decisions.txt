@@ -5,9 +5,11 @@
 # by Hamzah
 ##################################################
 
-convert_whole_realm_government_type_from_tribal_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	major = yes
+cgt_convert_whole_realm_government_type_from_tribal_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	decision_group_type = major
 	desc = convert_whole_realm_government_type_from_tribal_decision_desc
 
 	ai_check_interval = 0
@@ -74,15 +76,112 @@ convert_whole_realm_government_type_from_tribal_decision = {
 }
 
 ##################################################
+# Swap Government Type from Feudal <-> Clan
+# by Hamzah
+##################################################
+
+# Convert from Clan to feudal
+cgt_convert_clan_to_feudalism_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	decision_group_type = major
+	desc = cgt_convert_clan_to_feudalism_decision_desc
+
+	ai_check_interval = 0
+
+	is_shown = {
+		government_has_flag = government_is_clan
+	}
+
+	cost = {
+		prestige = 150
+	}
+
+	effect = {
+		trigger_event = major_decisions.0001
+		save_scope_as = actor
+		
+		change_government = feudal_government
+		
+		hidden_effect = {
+			every_vassal_or_below = {
+				limit = { government_has_flag = government_is_clan }
+				change_government = feudal_government
+				trigger_event = {
+					id = major_decisions.0002
+					days = 3
+				}
+			}
+		}
+	}
+
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}
+
+# Convert from Feudal to clan
+cgt_convert_feudalism_to_clan_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	decision_group_type = major
+	desc = cgt_convert_feudalism_to_clan_decision_desc
+
+	ai_check_interval = 0
+
+	is_shown = {
+		government_has_flag = government_is_feudal
+	}
+
+	cost = {
+		prestige = 150
+	}
+
+	effect = {
+		trigger_event = major_decisions.0001
+		save_scope_as = actor
+		
+		change_government = clan_government
+		
+		hidden_effect = {
+			every_vassal_or_below = {
+				limit = { government_has_flag = government_is_feudal }
+				change_government = clan_government
+				trigger_event = {
+					id = major_decisions.0002
+					days = 3
+				}
+			}
+		}
+	}
+
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}
+
+##################################################
 # Revert to Tribalism
 # A copy of the original decision, just for players and with less restrictions
 # by Hamzah
 ##################################################
 
 # A decision to deformalise the entire realm back into tribes.
-convert_to_tribalism_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	major = yes
+cgt_convert_to_tribalism_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	decision_group_type = major
 	desc = convert_to_tribalism_decision_desc
 
 	ai_check_interval = 36
@@ -113,10 +212,10 @@ convert_to_tribalism_decision = {
 	}
 
 	ai_potential = {
-		always = yes
+		always = no
 	}
 
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 }

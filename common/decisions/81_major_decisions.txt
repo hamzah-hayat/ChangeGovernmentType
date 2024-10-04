@@ -6,8 +6,10 @@
 
 # A decision to feudalize the entire realm (wow!)
 convert_whole_realm_to_feudalism_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	major = yes
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	decision_group_type = major
 	desc = convert_whole_realm_to_feudalism_decision_desc
 
 	ai_check_interval = 36
@@ -71,6 +73,8 @@ convert_whole_realm_to_feudalism_decision = {
 	}
 
 	effect = {
+		gain_legitimizing_legend_seed_tooltip_effect = yes
+		add_character_flag = ready_to_receive_seed
 		trigger_event = major_decisions.0001
 		save_scope_as = actor
 		convert_whole_realm_to_feudalism_effect = yes
@@ -101,8 +105,10 @@ convert_whole_realm_to_feudalism_decision = {
 
 # A decision to deformalise the entire realm back into tribes.
 convert_to_tribalism_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	major = yes
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	decision_group_type = major
 	desc = convert_to_tribalism_decision_desc
 
 	ai_check_interval = 36
