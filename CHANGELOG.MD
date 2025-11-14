@@ -11,3 +11,17 @@ Built for CK3 1.13.* (Basileus)
 
 ## Features
     - Add decision to switch between Feudal and Clan, and vice versa
+
+# 1.4.0
+By Hamzah
+Built for CK3 1.18.* (Crane)
+
+## Fixes
+    - Fix changing government type to Feudal/clan (Redo overrides), this fixes creation of holdings etc
+
+## Changes
+    - Change tribal decision to destroy all realm holdings and convert title provinces to tribal.
+    - You gain a legend seed when converting from tribal onwards, as per vanilla effects.
+
+## Features
+    - Add option to change to Soryo government

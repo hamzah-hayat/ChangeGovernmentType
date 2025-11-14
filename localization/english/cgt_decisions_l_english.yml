@@ -2,7 +2,7 @@
  cgt_convert_whole_realm_government_type_from_tribal_decision:0 "Adopt new Government"
  cgt_convert_whole_realm_government_type_from_tribal_decision_desc:0 "For [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] to keep expanding and developing we must leave the old ways behind and adopt a new method of governance, together."
  cgt_convert_whole_realm_government_type_from_tribal_decision_confirm:0 "Adopt a new form of Government"
- cgt_convert_whole_realm_government_type_from_tribal_decision_tooltip:0 "Change [government|E] type by adopting [feudalism|E] or [clan|E]"
+ cgt_convert_whole_realm_government_type_from_tribal_decision_tooltip:0 "Change [government|E] type by adopting [feudalism|E], [clan|E] or [soryo|E]."
 
  cgt_convert_clan_to_feudalism_decision: "Adopt Feudalism"
  cgt_convert_clan_to_feudalism_decision_desc: "The clans are divided and disruptive, to better manage my realm, I will adopt Feudalism!"
@@ -10,20 +10,23 @@
  cgt_convert_clan_to_feudalism_decision_tooltip: "Change [government|E] type by becoming [feudal|E]"
  
  cgt_convert_feudalism_to_clan_decision: "Adopt Clan Ways"
- cgt_convert_feudalism_to_clan_decision_desc: "Fedalism is to constrained, to restricted for me to govern my realm effectively. I will place my trust in my clan and adopt Clan ways!"
+ cgt_convert_feudalism_to_clan_decision_desc: "Feudalism is to constrained, to restricted for me to govern my realm effectively. I will place my trust in my clan and adopt Clan ways!"
  cgt_convert_feudalism_to_clan_decision_confirm: "Adopt Clan Ways"
  cgt_convert_feudalism_to_clan_decision_tooltip: "Change [government|E] type by becoming [clan|E]"
 
  cgt_events.0001.t:0 "A New Era"
- cgt_events.0001.desc:0 "The old ways have served us well, and we will always honor them. However, as the [ROOT.Char.GetTitleAsNameNoTooltip] of [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip], I have concluded that we must change our system of government if we are to continue to prosper. It is the crucial next step on our road to greatness!"
- cgt_events.0001.a:0 "The Realm will adopt [feudalism|E] [government|E]!"
- cgt_events.0001.b:0 "The Realm will adopt [clan|E] [government|E]!"
- cgt_events.0001.c:0 "On second thoughts, now is not the time to make this decision..."
+ cgt_events.0001.desc:0 "The old ways have served us well, and we will always honour them. However, as the [ROOT.Char.GetTitleAsNameNoTooltip] of [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip], I have concluded that we must change our system of government if we are to continue to prosper. It is the crucial next step on our road to greatness!"
+ cgt_events.0001.feudal:0 "The Realm will adopt [feudalism|E] [government|E]!"
+ cgt_events.0001.clan:0 "The Realm will adopt [clan|E] [government|E]!"
+ cgt_events.0001.feudal_japan:0 "The Realm will adopt [soryo|E] [government|E]!"
+ cgt_events.0001.cancel:0 "On second thoughts, now is not the time to make this decision..."
 
  cgt_vassals_will_convert_to_feudal:0 "My [tribal|E] vassals will change to [feudalism|E]"
  cgt_vassals_will_convert_to_clan:0 "My [tribal|E] vassals will change to [clan|E] government"
+ cgt_vassals_will_convert_to_fuedal_japan:0 "My [tribal|E] vassals will change to [soryo|E] government"
+ cgt_vassals_will_create_noble_family:0 "You will become head of a new [noble_family|E], and your vassals will create their own [noble_family|E] if not part of your [dynasty|E]."
 
  cgt_convert_to_tribalism_decision:0 "Embrace Tribalism"
  cgt_convert_to_tribalism_decision_desc:0 "How can I call myself a lord when it doesn't mean anything for my people? If I cannot convert them, there is only one alternative: I need to adopt them."
  cgt_convert_to_tribalism_decision_confirm:0 "Follow the way of my People"
- cgt_convert_to_tribalism_decision_tooltip:0 "Abandon your current [government|E] and become [tribal|E]"
+ cgt_convert_to_tribalism_decision_tooltip:0 "Abandon your current [government|E] and become [tribal|E]. Convert all [holdings|E] to [tribal|E]."

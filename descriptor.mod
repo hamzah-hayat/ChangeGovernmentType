@@ -1,9 +1,9 @@
-version="1.3.0"
+version="1.4.0"
 tags={
 	"Events"
 	"Decisions"
 	"Gameplay"
 }
 name="ChangeGovernmentType"
-supported_version="1.13.*"
+supported_version="1.18.*"
 remote_file_id="2903726036"

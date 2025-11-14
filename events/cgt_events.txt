@@ -8,70 +8,44 @@ cgt_events.0001 = {
 	type = character_event
 	title = cgt_events.0001.t
 	desc = cgt_events.0001.desc
-	theme = stewardship
+	theme = realm
+	override_background = { reference = courtyard }
 	left_portrait = {
 		character = root
-		animation = personality_rational
+		animation = storyteller
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_character_flag = ready_to_receive_seed
+			}
+			legend_seed_great_deed_dynasty_effect = yes
+			remove_character_flag = ready_to_receive_seed
+		}
 	}
 
 	option = {
-		name = cgt_events.0001.a
+		name = cgt_events.0001.feudal
 		convert_whole_realm_to_feudal_effect = yes
-		# show_as_tooltip = {
-		# 	convert_whole_realm_to_feudal_effect = yes
-		# }
 	}
 
 	option = {
-		name = cgt_events.0001.b
+		name = cgt_events.0001.clan
 		convert_whole_realm_to_clan_effect = yes
-		# show_as_tooltip = {
-		# 	convert_whole_realm_to_clan_effect = yes
-		# }
+	}
+
+	option = { 
+		trigger = {
+			has_tgp_dlc_trigger = yes
+		}
+
+		name = cgt_events.0001.feudal_japan
+		convert_whole_realm_to_feudal_japan_effect = yes
 	}
 
 	option = {
-		name = cgt_events.0001.c
+		name = cgt_events.0001.cancel
 		add_prestige_no_experience = 200
 	}
-
-	# option = {
-	# 	name = major_decisions.0001.a
-	# 	show_as_tooltip = {
-	# 		convert_whole_realm_to_feudalism_effect = yes
-	# 	}
-	# 	hidden_effect = {
-	# 		every_liege_or_above = {
-	# 			limit = {
-	# 				NOT = { is_independent_ruler = yes }
-	# 			}
-	# 			send_interface_message = {
-	# 				type = event_stewardship_neutral_with_text
-	# 				title = msg_vassal_feudalised
-	# 				desc = msg_vassal_feudalised_desc
-	# 				right_icon = root
-	# 			}
-	# 		}
-	# 	}
-	# }
 }
-
-# This alerts all other Vassals, will never run as AI dont use this decision so commenting out for now
-# Maybe useful in multiplayer? not sure
-# major_decisions.0002 = { #by Linnéa Thimrén
-# 	type = letter_event
-# 	opening = major_decisions.0002.opening
-# 	desc = major_decisions.0001.desc
-# 	sender = {
-# 		character = scope:actor
-# 		animation = personality_rational
-# 	}
-
-# 	option = {
-# 		name = major_decisions.0001.a
-# 		show_as_tooltip = {
-# 			change_government = feudal_government
-# 		}
-# 	}
-# }
-

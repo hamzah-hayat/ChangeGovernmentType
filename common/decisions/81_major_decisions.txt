@@ -7,20 +7,36 @@
 # A decision to feudalize the entire realm (wow!)
 convert_whole_realm_to_feudalism_decision = {
 	picture = {
+		trigger = {
+			has_tgp_dlc_trigger = yes
+			liege = {
+				culture = { has_cultural_pillar = heritage_japonic }
+			}
+		}
+		reference = "gfx/interface/illustrations/decisions/tgp_dominance.dds"
+	}
+	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
 	}
 	decision_group_type = major
 	desc = convert_whole_realm_to_feudalism_decision_desc
 
-	ai_check_interval = 36
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 72
+		duchy = 36
+		kingdom = 36
+		empire = 36
+		hegemony = 36
+	}
 
 	is_shown = {
-		government_has_flag = government_is_tribal
 		is_ai = yes
+		government_has_flag = government_is_tribal
 		OR = {
-			is_independent_ruler = yes
+			top_liege = this
 			AND = {
-				is_independent_ruler = no
+				top_liege != this
 				liege = {
 					NOR = {
 						government_has_flag = government_is_feudal
@@ -42,7 +58,6 @@ convert_whole_realm_to_feudalism_decision = {
 		capital_province.county = {
 			development_level >= convert_to_feudalism_development_requirement
 		}
-
 		custom_description = { #You need to have 70% of all (non-regional/unique) tribal innovations!
 			text = has_all_tribal_innovations
 			subject = root.culture
@@ -65,6 +80,17 @@ convert_whole_realm_to_feudalism_decision = {
 					has_innovation = innovation_currency_01
 				}
 			}
+		}
+		trigger_if = {
+			limit = { government_has_flag = government_is_wanua }
+			faith = { has_doctrine = doctrine_monotheist }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		custom_tooltip = {
+			text = permafrost_feudal_ban
+			NOT = { culture = { has_cultural_parameter = permafrost_cannot_become_feudal } }
 		}
 	}
 
@@ -89,7 +115,7 @@ convert_whole_realm_to_feudalism_decision = {
 	}
 
 	ai_potential = {
-		NOT = { has_title = title:e_mongol_empire } #Stop the Mongols from slowing their conquest.
+		NOT = { mpo_has_gok_mongol_empire_trigger = yes } #Stop the Mongols from slowing their conquest. 
 	}
 
 	ai_will_do = {
@@ -111,15 +137,22 @@ convert_to_tribalism_decision = {
 	decision_group_type = major
 	desc = convert_to_tribalism_decision_desc
 
-	ai_check_interval = 36
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 72
+		duchy = 36
+		kingdom = 36
+		empire = 36
+		hegemony = 36
+	}
 
 	is_shown = {
+		is_ai = yes
 		is_landed = yes
 		primary_title.tier >= tier_county
-		is_ai = yes
 		NOT = {
 			any_held_title = {
-				tier = tier_county
+				title_tier = county
 				title_province = {
 					NOT = { has_holding_type = tribal_holding }
 				}
@@ -128,11 +161,12 @@ convert_to_tribalism_decision = {
 		OR = {
 			government_has_flag = government_is_feudal
 			government_has_flag = government_is_clan
+			government_has_flag = government_is_mandala
 		}
 	}
 
 	is_valid = {
-		
+
 	}
 
 
