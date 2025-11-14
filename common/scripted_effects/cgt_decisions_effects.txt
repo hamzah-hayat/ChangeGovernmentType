@@ -390,11 +390,11 @@ convert_whole_realm_to_tribal_effect = {
 		}
 	}
 
-	# Then remove all other holdings
+	# Then remove all other holdings that aren't tribal
 	every_realm_province = {
 		limit = {
 			NOT = { has_holding_type = tribal_holding }
 		}
-		destroy_holding = yes
+		remove_holding = yes
 	}
 }

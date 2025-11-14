@@ -25,3 +25,16 @@ Built for CK3 1.18.* (Crane)
 
 ## Features
     - Add option to change to Soryo government
+
+# 1.4.1
+By Hamzah
+Built for CK3 1.18.* (Crane)
+
+## Fixes
+    - Whoops! Correctly set Tribal conversion effects. Forgot to test this.
+
+## Changes
+    - None
+
+## Features
+    - None

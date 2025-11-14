@@ -251,6 +251,12 @@ cgt_convert_to_tribalism_decision = {
 		trigger_event = major_decisions.0200
 		change_government = tribal_government
 
+		custom_tooltip = cgt_convert_to_tribalism_decision_convert_realm_tooltip
+
+		hidden_effect = {
+			convert_whole_realm_to_tribal_effect = yes
+		}
+
 		hidden_effect = {
 			every_vassal_or_below = {
 				limit = {

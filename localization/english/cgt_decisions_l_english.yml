@@ -28,5 +28,6 @@
 
  cgt_convert_to_tribalism_decision:0 "Embrace Tribalism"
  cgt_convert_to_tribalism_decision_desc:0 "How can I call myself a lord when it doesn't mean anything for my people? If I cannot convert them, there is only one alternative: I need to adopt them."
+ cgt_convert_to_tribalism_decision_convert_realm_tooltip:0 "Convert all [county_capitals|E] to [tribal|E]. Remove all other [holdings|E]."
  cgt_convert_to_tribalism_decision_confirm:0 "Follow the way of my People"
  cgt_convert_to_tribalism_decision_tooltip:0 "Abandon your current [government|E] and become [tribal|E]. Convert all [holdings|E] to [tribal|E]."
