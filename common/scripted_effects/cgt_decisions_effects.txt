@@ -6,7 +6,7 @@
 
 
 	hidden_effect = {
-		convert_vassals_to_government_type = { government_type = feudal_government }
+		convert_vassals_to_government_type = { GOVERNMENT_TYPE = feudal_government }
 		convert_whole_realm_effects = yes
 	}
 }
@@ -19,7 +19,7 @@ convert_whole_realm_to_clan_effect = {
 
 
 	hidden_effect = {
-		convert_vassals_to_government_type = { government_type = clan_government }
+		convert_vassals_to_government_type = { GOVERNMENT_TYPE = clan_government }
 		convert_whole_realm_effects = yes
 	}
 }
@@ -33,7 +33,7 @@ convert_whole_realm_to_feudal_japan_effect = {
 
 
 	hidden_effect = {
-		convert_vassals_to_government_type = { government_type = japan_feudal_government }
+		convert_vassals_to_government_type = { GOVERNMENT_TYPE = japan_feudal_government }
 		convert_whole_realm_effects = yes
 		setup_noble_houses = yes
 	}
