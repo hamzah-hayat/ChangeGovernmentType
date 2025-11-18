@@ -12,6 +12,7 @@ Built for CK3 1.13.* (Basileus)
 ## Features
     - Add decision to switch between Feudal and Clan, and vice versa
 
+
 # 1.4.0
 By Hamzah
 Built for CK3 1.18.* (Crane)
@@ -26,12 +27,27 @@ Built for CK3 1.18.* (Crane)
 ## Features
     - Add option to change to Soryo government
 
+
 # 1.4.1
 By Hamzah
 Built for CK3 1.18.* (Crane)
 
 ## Fixes
     - Whoops! Correctly set Tribal conversion effects. Forgot to test this.
+
+## Changes
+    - None
+
+## Features
+    - None
+
+
+# 1.4.2
+By Hamzah
+Built for CK3 1.18.* (Crane)
+
+## Fixes
+    - Fix for vassals not changing government type.
 
 ## Changes
     - None
